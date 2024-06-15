@@ -1,8 +1,11 @@
 import React from 'react'
+import { navLinks } from '../constants/data'
 
 const NavBar = () => {
   return (
-    <div className='text-center '>NavBar</div>
+      <div className='m-5 flex '>
+          
+    </div>
   )
 }
 
