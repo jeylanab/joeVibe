@@ -13,4 +13,21 @@ background-color: var(--body-color);
 }
 
 .bg{
-background-color: var(--body-color);}
+background-color: var(--body-color);
+}
+.input-border {
+
+ border: 2px solid #cccccc;
+  padding: 8px;
+  outline: none;
+ 
+}
+.input-border:focus {
+  border-color: #e3980c; 
+}
+
+.hover-color:hover {
+ background-color: #e3980c;
+ border-radius: 50%;
+
+}

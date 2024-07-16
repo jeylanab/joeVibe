@@ -1,6 +1,6 @@
 import React from 'react'
 import { navLinks } from '../constants/data'
-import logo from "../assets/logo.svg"
+import joevibe1 from "../assets/joevibe1.svg"
 import favorite from "../assets/favorite.svg"
 import cart from "../assets/cart.png"
 import profile from "../assets/profile.svg"
@@ -20,12 +20,12 @@ const NavBar = () => {
         </div>
         {/* logo div */}
         <div className='p-0 logo-div'>
-          <img src={logo} alt="" />
+          <img src={joevibe1} alt="" />
         </div>
         {/* icon div */}
         <div className='p-0 nav-icon flex justify-center items-center'>
-           <div><input className='mx-2 rounded-md p-1 border border-gray-300 focus:border-orange-500 outline-none ' type="text" placeholder='Search for Interest' /></div>
-           <img className='mx-2' src={favorite} alt="" />
+           <div><input className='mx-2 rounded-md p-1 input-border ' type="text" placeholder='Search for Interest' /></div>
+           <img className='mx-2 ' src={favorite} alt="" />
            <img className='mx-2' src={cart} alt="" />
            <img className='mx-2' src={profile} alt="" />
         </div>
