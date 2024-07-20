@@ -24,7 +24,7 @@ const NavBar = () => {
         </div>
         {/* icon div */}
         <div className='p-0 nav-icon flex justify-center items-center'>
-           <div><input className='mx-2 rounded-md p-1 input-border ' type="text" placeholder='Search for Interest' /></div>
+           <div><input className='mx-2 rounded-md p-1 input-border h-[50px] ' type="text" placeholder='Search for Interest' /></div>
            <div className=' w-[50px] h-[50px] m-1 rounded-full bg-cyan-400 flex justify-center items-center'> <img className='mx-2' src={favorite} alt="" /></div>
            <div className=' w-[50px] h-[50px] m-1 rounded-full bg-cyan-400 flex justify-center items-center'> <img className='mx-2' src={cart} alt="" /></div>
            <div className=' w-[50px] h-[50px] m-1 rounded-full bg-cyan-400 flex justify-center items-center'> <img className='mx-2' src={profile} alt="" /></div>
