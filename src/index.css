@@ -5,7 +5,10 @@
 
 
 :root {
-  --body-color: #E6E8E6;
+  --body-color: #F4F4F4;
+  --second-color: #F15025;
+  --third-color: #272525;
+  --fourth-color: #1F8316;
  
 }
 body{
@@ -31,3 +34,16 @@ background-color: var(--body-color);
  border-radius: 50%;
 
 }
+.starter{
+background-color: var(--second-color);
+filter: drop-shadow(4px 4px 1px rgba(31, 131, 22, 0.90));    
+color: var(--body-color);
+
+}
+
+
+.icons:hover {
+ background-color: var(--second-color) ;
+ transition: ease-in-out;
+ transform: all;
+} 
