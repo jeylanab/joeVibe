@@ -2,11 +2,13 @@ import React from 'react'
 import logo from "../assets/joevibe.svg"
 import search from "../assets/search.svg"
 import cart from "../assets/cart.svg"
+import menu from "../assets/Menu.svg"
+import close from "../assets/Close.svg"
 
 const NavBar = () => {
   return (
       <div className=''> 
-          <div className='flex justify-around items-center my-5'>
+          <div className=' hidden md:flex justify-around items-center my-5'>
               <div className='logo flex items-center justify-start'>
                 <img src={logo} alt="WEBSITE LOGO" />
               </div>
@@ -36,6 +38,17 @@ const NavBar = () => {
               </div>
           </div>
           
+          {/* design nav bar that is only visible for the small screen size */}
+          <div className=' md:hidden flex justify-between items-center mobile m-5'>
+              <div className='left'>
+                 <img className='' src={logo}  alt="JOEVIBE LOGO" />
+              </div>
+              <div>
+                 <img src={menu} alt="" />
+              </div>
+              
+            
+          </div>          
    
       
       </div>
