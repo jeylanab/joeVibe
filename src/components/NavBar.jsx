@@ -3,8 +3,8 @@ import { useState } from 'react'
 import logo from "../assets/joevibe.svg"
 import search from "../assets/search.svg"
 import cart from "../assets/cart.svg"
-import menu from "../assets/Menu.svg"
-import close from "../assets/Close.svg"
+import menu from "../assets/menu.svg"
+import close from "../assets/close.svg"
 
 const NavBar = () => {
     
