@@ -2,7 +2,12 @@
 export const content = ["./index.html", "./src/**/*.{js,jsx}"];
 export const mode = "jit";
 export const theme = {
-  extend: {},
+  extend: {
+    width: {
+        '20vw': '20vw',
+        '60vw': '60vw',
+      },
+  },
   screens: {
     xs: "480px",
     ss: "620px",

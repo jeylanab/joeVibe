@@ -47,3 +47,7 @@ color: var(--body-color);
  transition: ease-in-out;
  transform: all;
 } 
+.text-shadow {
+color: var(--second-color);
+  text-shadow: 2px 2px 2px rgba(31, 131, 22, 0.80);
+}
