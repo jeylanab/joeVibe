@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import logo from "../assets/joevibe.svg";
 import search from "../assets/search.svg";
-import close from "../assets/close.svg";
+import close from "../close.svg";
 import cart from "../assets/cart.svg";
-import menu from "../assets/menu.svg";
+import menu from "../menu.svg";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
