@@ -24,10 +24,13 @@ const Hero = () => {
       {/* Left side for hero text */}
       <div className='w-full md:w-1/2 flex items-center justify-center p-5'>
         <div className='text-center'>
-          <h1 className='text-3xl md:text-8xl font-bold mb-4'> <span className='text-shadow'>{textOptions[textIndex]}</span> Your Style</h1>
-          <p className='text-md md:text-lg'>  Unleash the latest trends and timeless pieces. Shop now to elevate your
-              wardrobe with exclusive collections curated just for you.
-          </p>
+          <div className='my-8'>
+              <h1 className='text-3xl md:text-8xl font-bold mb-4'> <span className='text-shadow hero-text'>{textOptions[textIndex]}</span> Your Style</h1>
+              <p className='text-md md:text-lg'>  Unleash the latest trends and timeless pieces. Shop now to elevate your
+                  wardrobe with exclusive collections curated just for you.
+              </p>
+          </div>
+          
            <button className='button-1 px-5 py-2 rounded-[2px]'>Shop Collection</button>
         </div>
       </div>
