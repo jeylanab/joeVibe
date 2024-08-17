@@ -74,7 +74,7 @@ const NavBar = () => {
             <li onClick={toggleMobileMenu}>Product</li>
             <li onClick={toggleMobileMenu}>Contact</li>
           </ul>
-          <div className='flex flex-col items-center mt-5'>
+          <div className='flex flex-col items-left mt-5'>
             <div className='search flex items-center my-3'>
               <div className='bg-white icons p-3 rounded-full mx-2'>
                 <img src={search} alt="search button" />
