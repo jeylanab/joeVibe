@@ -13,8 +13,10 @@ const Hero = () => {
       {/* Left side for hero text */}
       <div className='w-full md:w-1/2 flex items-center justify-center p-5'>
         <div className='text-center'>
-          <h1 className='text-2xl md:text-8xl font-bold mb-4 text-shadow'>Discover Your Style</h1>
-          <p className='text-md md:text-lg'>Some descriptive text goes here. Explain the purpose of the hero section or a call to action.</p>
+          <h1 className='text-3xl md:text-8xl font-bold mb-4 text-shadow'> <span>Discover</span> Your Style</h1>
+          <p className='text-md md:text-lg'>  Unleash the latest trends and timeless pieces. Shop now to elevate your
+              wardrobe with exclusive collections curated just for you.
+           </p>
         </div>
       </div>
 
