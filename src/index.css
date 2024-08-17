@@ -49,5 +49,10 @@ color: var(--body-color);
 } 
 .text-shadow {
 color: var(--second-color);
-  text-shadow: 2px 2px 2px rgba(31, 131, 22, 0.80);
+  text-shadow: 3px 3px 2px rgba(31, 131, 22, 0.80);
+}
+.button-1  {
+ background-color: var(--second-color);
+ filter: drop-shadow(1px 1px 2px rgba(31, 131, 22, 0.90));    
+ color: var(--body-color);
 }
