@@ -17,6 +17,7 @@ body{
 background-color: var(--body-color);
 font-family: "Readex Pro", sans-serif;
 color: var(--third-color);
+cursor: default;
 }
 
 
@@ -115,4 +116,49 @@ color: var(--body-color);
   color: #ff6347;
   transition: 0.5s ease;
 
+}
+.accordion {
+ width: 500px;
+}
+
+.accordion li{
+ list-style: none;
+ margin: 5px;
+ padding: 5px;
+ background-color: white;
+
+}
+.accordion li label {
+ display: flex;
+ align-items: center;
+ justify-content: start;
+ cursor: pointer;
+}
+.accordion li label::before {
+  content : "+";
+  font-weight: 700;
+  font-size: x-large;
+  padding: 4px;
+  
+}
+input[type="radio"] {
+  display: none;
+}
+.accordion .content {
+   color: var(--third-color);
+   padding: 5px;
+   max-height: 0 ;
+   overflow: hidden;
+   transition: max-height 0.5s, padding 0.5s;
+  
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+   max-height: 400px;
+  
+}
+
+.accordion input[type="radio"]:checked + label::before {
+  content: "x";
+  color: #ff6347;
 }

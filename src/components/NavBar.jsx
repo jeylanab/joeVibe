@@ -16,22 +16,22 @@ const NavBar = () => {
     <div>
       {/* Desktop Navbar */}
       <div className='hidden md:flex justify-around items-center my-5'>
-        <div className='logo flex items-center justify-start'>
+        <div className='logo flex items-center justify-start cursor-pointer'>
           <img src={logo} alt="WEBSITE LOGO" />
         </div>
-        <ul className='flex justify-evenly items-center'>
+        <ul className='flex justify-evenly items-center cursor-pointer'>
           <li className='mx-5'>Home</li>
           <li className='mx-5'>Product</li>
           <li className='mx-5'>Contact</li>
         </ul>
         <div className='flex justify-center items-center'>
-          <div className='search flex justify-center items-center mx-5'>
+          <div className='search flex justify-center items-center mx-5 cursor-pointer'>
             <div className='bg-white icons p-3 rounded-full mx-2'>
               <img src={search} alt="search button" />
             </div>
             <p>Search</p>
           </div>
-          <div className='cart flex justify-center items-center mx-5'>
+          <div className='cart flex justify-center items-center mx-5 cursor-pointer'>
             <div className='bg-white icons p-3 rounded-full mx-2'>
               <img src={cart} alt="cart button" />
             </div>
