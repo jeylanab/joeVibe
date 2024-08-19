@@ -99,6 +99,20 @@ color: var(--body-color);
 .small-box:hover {
   background-color: rgba(241, 81, 37, 0.37);
 
- 
+}
+.mytest {
+  background-color: var(--second-color);
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px 1px var(--third-color);
+  transition: 0.5s ease;
+}
+.mytest:hover {
+  background-color:#272525;
+  border-radius: 5px;
+  color: var(--body-color);
+}
+.mytest:hover div div  h2 {
+  color: #ff6347;
+  transition: 0.5s ease;
 
 }
