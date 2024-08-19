@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +15,7 @@
 }
 body{
 background-color: var(--body-color);
-}
+  font-family: "Readex Pro", sans-serif;}
 
 .bg{
 background-color: var(--body-color);
@@ -67,5 +69,10 @@ color: var(--body-color);
   top: 40px;
   
   background-color: var(--body-color);
+
+}
+.title-color {
+  color: var(--body-color);
+  
 
 }
