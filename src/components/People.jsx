@@ -73,8 +73,8 @@ const People = () => {
                         </div>
                     </li>
                     <li className='shadow-md'>
-                        <input type="radio" name='accordion' id='fourth' />
-                        <label htmlFor='fourth'>How can I contact customer support?</label>
+                        <input type="radio" name='accordion' id='fourth' checked />
+                        <label htmlFor='fourth' >How can I contact customer support?</label>
                         <div className='content'>
                             <p>You can reach our customer support team via the "Contact Us" page on our website. We are available by email, live chat, and phone during regular business hours.</p>
                         </div>
