@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <div>
+    <div className='sticky top-0 z-50 navbg'>
       {/* Desktop Navbar */}
       <div className='hidden md:flex justify-around items-center my-5'>
         <div className='logo flex items-center justify-start cursor-pointer'>
@@ -60,7 +60,7 @@ const NavBar = () => {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='md:hidden flex flex-col items-center bg-gray-100 p-5  absolute top-0 left-0 w-full h-screen'>
+        <div className='md:hidden flex flex-col items-center bg-gray-100 p-5 absolute top-0 left-0 w-full h-screen z-40'>
           <div className='flex justify-between items-center w-full mb-5'>
             <img 
               src={close} 
@@ -95,4 +95,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-

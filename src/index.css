@@ -31,6 +31,9 @@ background-color: var(--body-color);
   outline: none;
  
 }
+.navbg{
+ background-color: var(--body-color);
+}
 .input-border:focus {
   border-color: #e3980c; 
 }
