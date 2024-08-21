@@ -60,7 +60,7 @@ const NavBar = () => {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className='md:hidden flex flex-col items-center bg-gray-100 p-5 absolute top-0 left-0 w-full h-screen z-40'>
+        <div className='md:hidden flex flex-col items-center mybg p-5 absolute top-0 left-0 w-full h-screen z-40'>
           <div className='flex justify-between items-center w-full mb-5'>
             <img 
               src={close} 
@@ -69,12 +69,12 @@ const NavBar = () => {
               className="cursor-pointer"
             />
           </div>
-          <ul className='flex flex-col text-left items-center space-y-5'>
+          <ul className='flex flex-col text-2xl text-left items-center space-y-5'>
             <li onClick={toggleMobileMenu}>Home</li>
             <li onClick={toggleMobileMenu}>Product</li>
             <li onClick={toggleMobileMenu}>Contact</li>
           </ul>
-          <div className='flex flex-col items-left mt-5'>
+          <div className='flex flex-col text-2xl items-left mt-5'>
             <div className='search flex items-center my-3'>
               <div className='bg-white icons p-3 rounded-full mx-2'>
                 <img src={search} alt="search button" />

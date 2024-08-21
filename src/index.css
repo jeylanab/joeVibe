@@ -24,6 +24,10 @@ cursor: default;
 .bg{
 background-color: var(--body-color);
 }
+.mybg{
+  background-color: var(--second-color);
+
+}
 .input-border {
 
  border: 2px solid #cccccc;

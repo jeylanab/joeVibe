@@ -12,7 +12,7 @@ const People = () => {
           What people all over the world are saying about us
         </h1>
         <div className='flex flex-col md:flex-row justify-center items-center sm:px-[100px]'>
-          <div className='flex flex-col justify-start items-center m-3 sm:m-5 px-5 py-2 mytest cursor-pointer w-full sm:w-auto'>
+          <div className='flex flex-col justify-start items-center m-5 sm:m-5 px-5 py-2 mytest cursor-pointer sm:w-auto'>
             <h3 className='title-color py-3 text-center sm:text-left'>
               Excellent service and support. Highly recommended by everyone who tried!
             </h3>
@@ -25,7 +25,7 @@ const People = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col justify-start items-center m-3 sm:m-5 px-5 py-2 mytest cursor-pointer w-full sm:w-auto'>
+          <div className='flex flex-col justify-start items-center m-5 sm:m-5 px-5 py-2 mytest cursor-pointer sm:w-auto'>
             <h3 className='title-color py-3 text-center sm:text-left'>
               Amazing experience, outstanding quality, and support I can rely on.
             </h3>
@@ -38,7 +38,7 @@ const People = () => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col justify-start items-center m-3 sm:m-5 px-5 py-2 mytest cursor-pointer w-full sm:w-auto'>
+          <div className='flex flex-col justify-start items-center m-5 sm:m-5 px-5 py-2 mytest cursor-pointer sm:w-auto'>
             <h3 className='title-color py-3 text-center sm:text-left'>
               Great product! Exceeded all my expectations, and love it.
             </h3>
@@ -59,7 +59,7 @@ const People = () => {
       </div>
 
       {/* Frequently asked questions section */}
-      <div className='flex flex-col sm:flex-row justify-center items-start sm:items-center'>
+      <div className='flex flex-col m-5 sm:flex-row justify-center items-start sm:items-center'>
         <ul className='accordion w-full'>
           <li className='shadow-md'>
             <input type="radio" name='accordion' id='first' />
@@ -99,7 +99,7 @@ const People = () => {
           </li>
         </ul>
         
-        <div className='flex flex-col items-center justify-center w-full bg-white shadow-md py-10 mt-10 sm:mt-0'>
+        <div className='flex flex-col items-center justify-center  bg-white shadow-md py-10 mt-10 sm:mt-0'>
           <div className='py-5'>
             <img src={quest} alt="More Questions" />
           </div>
