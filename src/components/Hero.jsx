@@ -14,7 +14,7 @@ const Hero = () => {
     useEffect(() => {
     const interval = setInterval(() => {
       setTextIndex((prevIndex) => (prevIndex + 1) % textOptions.length);
-    }, 5000); 
+    }, 3000); 
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, []);
