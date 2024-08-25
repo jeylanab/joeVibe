@@ -5,6 +5,7 @@ import Testmonial from './components/Testmonial';
 import People from './components/People';
 import Footer from './components/Footer';
 import "./index.css"
+import Product from './components/Product';
 
 
 
@@ -15,7 +16,8 @@ const App = () => {
       <Hero />
       <Testmonial />
       <People/>
-      <Footer/>
+      <Footer />
+      <Product/>
       
     </div>
   );
