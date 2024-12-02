@@ -28,7 +28,7 @@ const Testmonial = () => {
   }, [targetNumber]);
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div className='card-item mx-auto max-w-7xl sm:mx-4'>
         <div className='side-card'>
           <h1 className='text-center text-xl sm:text-2xl font-medium p-3'>
