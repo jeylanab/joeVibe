@@ -1,24 +1,36 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Testmonial from './components/Testmonial';
 import People from './components/People';
 import Footer from './components/Footer';
-import "./index.css"
-
-
+import Items from './components/Items';
+import "./index.css";
 
 const App = () => {
   return (
-    <div className='w-full'>
-      <NavBar />
-      <Hero />
-      <Testmonial />
-      <People/>
-      <Footer />
-    
-      
-    </div>
+    <Router>
+      <div className='w-full'>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <Testmonial />
+              <People />
+              <Footer />
+            </>
+          } />
+          <Route path="/items" element={
+            <>
+              <Items />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

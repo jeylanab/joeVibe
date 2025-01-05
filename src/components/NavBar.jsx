@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../assets/joevibe.svg";
 import search from "../assets/search.svg";
 import close from "./close.svg";
@@ -20,9 +21,9 @@ const NavBar = () => {
           <img src={logo} alt="WEBSITE LOGO" />
         </div>
         <ul className='flex justify-evenly items-center cursor-pointer'>
-          <li className='mx-5'>Home</li>
-          <li className='mx-5'>Product</li>
-          <li className='mx-5'>Contact</li>
+          <li className='mx-5'><Link to="/">Home</Link></li>
+          <li className='mx-5'><Link to="/items">Product</Link></li>
+          <li className='mx-5'><Link to="/contact">Contact</Link></li>
         </ul>
         <div className='flex justify-center items-center'>
           <div className='search flex justify-center items-center mx-5 cursor-pointer'>
@@ -70,9 +71,9 @@ const NavBar = () => {
             />
           </div>
           <ul className='flex flex-col text-2xl text-left items-center space-y-5'>
-            <li onClick={toggleMobileMenu}>Home</li>
-            <li onClick={toggleMobileMenu}>Product</li>
-            <li onClick={toggleMobileMenu}>Contact</li>
+            <li onClick={toggleMobileMenu}><Link to="/">Home</Link></li>
+            <li onClick={toggleMobileMenu}><Link to="/items">Product</Link></li>
+            <li onClick={toggleMobileMenu}><Link to="/contact">Contact</Link></li>
           </ul>
           <div className='flex flex-col text-2xl items-left mt-5'>
             <div className='search flex items-center my-3'>
