@@ -9,7 +9,7 @@ const Hero = () => {
   const allImages = [hero1, hero2, hero4];
   const [images, setImages] = useState(allImages);
   const [textIndex, setTextIndex] = useState(0);
-  const [imageKey, setImageKey] = useState(0); // key to force animation
+  const [imageKey, setImageKey] = useState(0);
 
   const textOptions = ['Discover', 'Uncover', 'Unleash', 'Explore'];
 
@@ -39,8 +39,8 @@ const Hero = () => {
         {/* Top image for small screens / Left image for large screens */}
         <motion.div
           key={`left-${imageKey}`}
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="w-full md:w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-lg"
@@ -54,7 +54,7 @@ const Hero = () => {
             initial={{ scale: 0.92, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }} 
             className="w-full md:w-[500px] h-[350px] sm:h-[400px] md:h-[500px] bg-cover bg-center rounded-[40px] shadow-2xl flex items-end justify-center relative"
             style={{ backgroundImage: `url(${images[0]})` }}
           >
