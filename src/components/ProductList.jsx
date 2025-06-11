@@ -21,46 +21,47 @@ const ProductList = () => {
   };
 
   return (
-    <div className="min-h-screen py-12 px-6 md:px-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">
-        🌟 Trending Products
+    <div className="min-h-screen bg-[#f5f5f7] py-20 px-6 md:px-16 font-['San Francisco','Inter','Helvetica Neue',sans-serif]">
+      <h2 className="text-3xl md:text-5xl font-semibold text-center text-[#1d1d1f] mb-16 tracking-tight">
+        Discover Premium Products
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14">
         {products.map((product, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white border rounded-3xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 group"
+            className="bg-white border border-[#e5e5ea] rounded-3xl shadow-sm hover:shadow-md transition-all duration-300"
           >
-            <div className="relative overflow-hidden rounded-xl">
+            <div className="overflow-hidden rounded-t-3xl">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 rounded-xl"
+                className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
               />
-              <span className="absolute top-2 right-2 bg-white/80 text-gray-800 text-xs px-3 py-1 rounded-full shadow-sm font-medium">
-                ${product.price}
-              </span>
             </div>
 
-            <div className="mt-5">
-              <h3 className="text-lg font-bold text-gray-900">{product.name}</h3>
-              <p className="text-sm text-gray-600 mt-1">{product.description}</p>
+            <div className="p-6 space-y-3">
+              <h3 className="text-xl font-semibold text-[#1d1d1f]">{product.name}</h3>
+              <p className="text-sm text-[#6e6e73]">{product.description}</p>
 
-              <div className="flex gap-3 mt-6">
+              <div className="flex justify-between items-center pt-4">
+                <span className="text-base font-semibold text-[#1d1d1f]">${product.price}</span>
+              </div>
+
+              <div className="flex gap-4 mt-4">
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition"
+                  className="flex-1 border border-[#d2d2d7] text-[#1d1d1f] py-2 rounded-full text-sm font-medium hover:bg-[#f2f2f2] transition"
                 >
                   Add to Cart
                 </button>
                 <button
                   onClick={() => handleBuyNow(product)}
-                  className="bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] text-white px-4 py-2 rounded-full text-sm font-semibold hover:scale-105 transition"
+                  className="flex-1 bg-[#0071e3] text-white py-2 rounded-full text-sm font-medium hover:bg-[#005bb5] transition"
                 >
                   Buy Now
                 </button>
