@@ -61,7 +61,7 @@ const ProductList = () => {
                 </button>
                 <button
                   onClick={() => handleBuyNow(product)}
-                  className="flex-1 bg-[#0071e3] text-white py-2 rounded-full text-sm font-medium hover:bg-[#005bb5] transition"
+                  className="flex-1 bg-[#fd9a30] text-white py-2 rounded-full text-sm font-medium hover:bg-[#443215] transition"
                 >
                   Buy Now
                 </button>

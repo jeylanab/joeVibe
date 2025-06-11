@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
-import Testmonial from './components/Testmonial';
+import BrandLogoCarousel from './components/BrandLogoCarousel';
 import People from './components/People';
 import Footer from './components/Footer';
 import Items from './components/Items';
@@ -19,7 +19,7 @@ const App = () => {
             <>
               <Hero />
               <ProductList/>
-              <Testmonial />
+              <BrandLogoCarousel />
               <People />
               <Footer />
             </>
