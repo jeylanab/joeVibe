@@ -1,0 +1,13 @@
+// backend/models/product.js
+import mongoose from 'mongoose';
+
+const productSchema = new mongoose.Schema({
+  name: String,
+  price: Number,
+  description: String,
+  image: String
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+export default Product;

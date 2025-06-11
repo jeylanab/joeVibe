@@ -6,6 +6,13 @@ export const theme = {
     width: {
         '20vw': '20vw',
         '60vw': '60vw',
+    },
+    backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
       },
   },
   screens: {

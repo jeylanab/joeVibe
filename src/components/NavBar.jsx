@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import logo from "../assets/joevibe.svg";
 import search from "../assets/search.svg";
 import close from "./close.svg";
@@ -8,91 +10,119 @@ import menu from "./menu.svg";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Product", path: "/items" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
-    <div className='sticky top-0 z-50 navbg'>
+    <div className="sticky top-0 z-50 w-full">
       {/* Desktop Navbar */}
-      <div className='hidden md:flex justify-around items-center my-5'>
-        <div className='logo flex items-center justify-start cursor-pointer'>
-          <img src={logo} alt="WEBSITE LOGO" />
-        </div>
-        <ul className='flex justify-evenly items-center cursor-pointer'>
-          <li className='mx-5'><Link to="/">Home</Link></li>
-          <li className='mx-5'><Link to="/items">Product</Link></li>
-          <li className='mx-5'><Link to="/contact">Contact</Link></li>
+      <div className="hidden md:flex items-center justify-between px-10 py-4 backdrop-blur-lg bg-white/30 shadow-sm rounded-b-xl">
+        {/* Logo */}
+        <Link to="/">
+          <img src={logo} alt="Logo" className="w-[130px]" />
+        </Link>
+
+        {/* Nav Links */}
+        <ul className="flex space-x-8 text-gray-800 font-medium">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link
+                to={link.path}
+                className="hover:text-orange-500 hover:underline transition duration-200"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
-        <div className='flex justify-center items-center'>
-          <div className='search flex justify-center items-center mx-5 cursor-pointer'>
-            <div className='bg-white icons p-3 rounded-full mx-2'>
-              <img src={search} alt="search button" />
-            </div>
-            <p>Search</p>
+
+        {/* Action Icons & Button */}
+        <div className="flex items-center space-x-6">
+          <div className="hover:bg-white/50 p-2 rounded-full transition">
+            <img src={search} alt="Search" className="w-5 h-5" />
           </div>
-          <div className='cart flex justify-center items-center mx-5 cursor-pointer'>
-            <div className='bg-white icons p-3 rounded-full mx-2'>
-              <img src={cart} alt="cart button" />
-            </div>
-            <p>Cart</p>
+          <div className="hover:bg-white/50 p-2 rounded-full transition">
+            <img src={cart} alt="Cart" className="w-5 h-5" />
           </div>
-          <div>
-            <button className='starter px-5 py-2 rounded-[2px]'>Get Started</button>
-          </div>
+          <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold shadow transition">
+            Get Started
+          </button>
         </div>
       </div>
-      
-      {/* Mobile Navbar */}
-      <div className='md:hidden flex justify-between items-center mobile m-5'>
-        <div className='left'>
-          <img src={logo} alt="JOEVIBE LOGO" />
-        </div>
-        <div>
-          <img
-            src={isMobileMenuOpen ? close : menu}
-            alt={isMobileMenuOpen ? "close menu" : "open menu"}
-            onClick={toggleMobileMenu}
-            className="cursor-pointer p-3"
-          />
-        </div>
+
+      {/* Mobile Top Bar */}
+      <div className="flex md:hidden justify-between items-center px-5 py-3 backdrop-blur-lg bg-white/30 shadow-sm">
+        <Link to="/">
+          <img src={logo} alt="Logo" className="w-[110px]" />
+        </Link>
+        <img
+          src={isMobileMenuOpen ? close : menu}
+          alt="Toggle Menu"
+          onClick={toggleMobileMenu}
+          className="w-8 h-8 cursor-pointer"
+        />
       </div>
-      
+
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className='md:hidden flex flex-col items-center mybg p-5 absolute top-0 left-0 w-full h-screen z-40'>
-          <div className='flex justify-between items-center w-full mb-5'>
-            <img 
-              src={close} 
-              alt="close menu" 
-              onClick={toggleMobileMenu} 
-              className="cursor-pointer"
-            />
-          </div>
-          <ul className='flex flex-col text-2xl text-left items-center space-y-5'>
-            <li onClick={toggleMobileMenu}><Link to="/">Home</Link></li>
-            <li onClick={toggleMobileMenu}><Link to="/items">Product</Link></li>
-            <li onClick={toggleMobileMenu}><Link to="/contact">Contact</Link></li>
-          </ul>
-          <div className='flex flex-col text-2xl items-left mt-5'>
-            <div className='search flex items-center my-3'>
-              <div className='bg-white icons p-3 rounded-full mx-2'>
-                <img src={search} alt="search button" />
-              </div>
-              <p>Search</p>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            key="mobileMenu"
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-start backdrop-blur-lg bg-white/30 px-6 py-10"
+          >
+            <div className="w-full flex justify-end mb-6">
+              <img
+                src={close}
+                alt="Close"
+                onClick={toggleMobileMenu}
+                className="w-8 h-8 cursor-pointer"
+              />
             </div>
-            <div className='cart flex  items-center my-3'>
-              <div className='bg-white icons p-3 rounded-full mx-2'>
-                <img src={cart} alt="cart button" />
+
+            <ul className="flex flex-col space-y-6 text-xl font-semibold text-gray-800">
+              {navLinks.map((link, index) => (
+                <li key={index} onClick={toggleMobileMenu}>
+                  <Link
+                    to={link.path}
+                    className="hover:text-orange-500 transition duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col items-center gap-6 mt-10">
+              <div className="flex items-center gap-2">
+                <img src={search} alt="Search" className="w-5 h-5" />
+                <span>Search</span>
               </div>
-              <p>Cart</p>
+              <div className="flex items-center gap-2">
+                <img src={cart} alt="Cart" className="w-5 h-5" />
+                <span>Cart</span>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+
+            <button
+              onClick={toggleMobileMenu}
+              className="mt-10 bg-orange-500 text-white px-8 py-2 rounded-full hover:bg-orange-600 font-semibold shadow-md"
+            >
+              Get Started
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
-}
+};
 
 export default NavBar;

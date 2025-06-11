@@ -7,6 +7,7 @@ import People from './components/People';
 import Footer from './components/Footer';
 import Items from './components/Items';
 import "./index.css";
+import ProductList from './components/ProductList';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={
             <>
               <Hero />
+              <ProductList/>
               <Testmonial />
               <People />
               <Footer />
