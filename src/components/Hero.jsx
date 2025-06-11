@@ -63,7 +63,7 @@ const Hero = () => {
 
             {/* Text content */}
             <div className="z-10 text-center pb-10 px-4">
-              <h1 className="text-3xl animate-bounce sm:text-4xl md:text-5xl font-bold mb-3 text-green-500 text-transparent stroke-black bg-clip-text">
+              <h1 className="text-3xl animate-pulse sm:text-4xl md:text-5xl font-bold mb-3 text-green-500 ">
                 {textOptions[textIndex]} <span className="text-white block">Your Style</span>
               </h1>
               <p className="text-sm sm:text-base text-white mb-6">
