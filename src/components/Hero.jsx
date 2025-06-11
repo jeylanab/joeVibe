@@ -36,14 +36,14 @@ const Hero = () => {
   return (
     <div className="w-full bg-[#f8f9fb] py-10">
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6 px-4 md:px-8">
-        {/* Left image */}
+        {/* Top image for small screens / Left image for large screens */}
         <motion.div
           key={`left-${imageKey}`}
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="hidden md:block w-[120px] h-[400px] bg-cover bg-center rounded-full shadow-lg"
+          className="w-full md:w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-lg"
           style={{ backgroundImage: `url(${images[1]})` }}
         />
 
@@ -55,7 +55,7 @@ const Hero = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="w-full md:w-[500px] h-[400px] sm:h-[450px] md:h-[500px] bg-cover bg-center rounded-[40px] shadow-2xl flex items-end justify-center relative"
+            className="w-full md:w-[500px] h-[350px] sm:h-[400px] md:h-[500px] bg-cover bg-center rounded-[40px] shadow-2xl flex items-end justify-center relative"
             style={{ backgroundImage: `url(${images[0]})` }}
           >
             {/* Gradient overlay */}
@@ -64,7 +64,7 @@ const Hero = () => {
             {/* Text content */}
             <div className="z-10 text-center pb-10 px-4">
               <h1 className="text-3xl animate-bounce sm:text-4xl md:text-5xl font-bold mb-3 text-green-500 text-transparent stroke-black bg-clip-text">
-                {textOptions[textIndex]} <span className="text-white block"> Your Style</span>
+                {textOptions[textIndex]} <span className="text-white block">Your Style</span>
               </h1>
               <p className="text-sm sm:text-base text-white mb-6">
                 Shop the latest trends and exclusive collections
@@ -76,14 +76,14 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Right image */}
+        {/* Bottom image for small screens / Right image for large screens */}
         <motion.div
           key={`right-${imageKey}`}
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="hidden md:block w-[120px] h-[400px] bg-cover bg-center rounded-full shadow-lg"
+          className="w-full md:w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-lg"
           style={{ backgroundImage: `url(${images[2]})` }}
         />
       </div>
