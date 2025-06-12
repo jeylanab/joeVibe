@@ -6,18 +6,10 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // ✅ Load user from localStorage on first render
   useEffect(() => {
     const storedUser = localStorage.getItem('userInfo');
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-
-      // Optionally check if token expired here (if you store expiry)
-      // if (parsedUser.tokenExpiry && Date.now() > parsedUser.tokenExpiry) {
-      //   logout();
-      //   return;
-      // }
-
       setUser(parsedUser);
       setIsAuthenticated(true);
     }

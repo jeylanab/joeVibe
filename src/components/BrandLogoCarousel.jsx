@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Import your logos from /assets/brands/
 import brand1 from '../assets/brands/1.png';
 import brand2 from '../assets/brands/2.png';
 import brand3 from '../assets/brands/3.png';
@@ -32,14 +31,14 @@ const BrandShowcase = () => {
       </div>
 
       <motion.div
-        className="flex gap-8 items-center w-max px-4"
+        className="flex gap-10 items-center w-max px-4"
         animate={{ x: ['0%', '-50%'] }}
         transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
       >
         {loopedLogos.map((logo, index) => (
           <div
             key={index}
-            className="w-24 h-16 flex items-center justify-center hover:scale-105 transition-transform duration-300"
+            className="w-36 h-28 sm:w-40 sm:h-28 flex items-center justify-center hover:scale-110 transition-transform duration-300"
           >
             <img
               src={logo}
