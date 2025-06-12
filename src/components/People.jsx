@@ -16,7 +16,7 @@ const testimonials = [
   {
     text: "Amazing experience, outstanding quality, and support I can rely on.",
     name: "Jane Smith",
-    role: "Developer",
+    role: "StartUp Founder",
     image: test3,
   },
   {

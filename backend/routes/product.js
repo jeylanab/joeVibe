@@ -1,28 +1,27 @@
-// backend/routes/product.js
 import express from 'express';
-import Product from '../models/product.js';
+import Product from '../models/Product.js';
+import { verifyAdmin } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
-// Get all products
-router.get('/', async (req, res) => {
+// ➕ Create product (admin only)
+router.post("/", verifyAdmin, async (req, res) => {
   try {
-    const products = await Product.find();
-    res.json(products);
+    const product = new Product(req.body);
+    const saved = await product.save();
+    res.status(201).json(saved);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
 
-// Add a product (optional for now)
-router.post('/', async (req, res) => {
-  const { name, price, description, image } = req.body;
+// 🔍 Get all products
+router.get("/", async (req, res) => {
   try {
-    const newProduct = new Product({ name, price, description, image });
-    await newProduct.save();
-    res.status(201).json(newProduct);
+    const products = await Product.find().sort({ createdAt: -1 });
+    res.json(products);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    res.status(500).json({ error: err.message });
   }
 });
 
