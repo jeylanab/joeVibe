@@ -15,7 +15,7 @@ router.post("/", verifyAdmin, async (req, res) => {
   }
 });
 
-// 🔍 Get all products
+// 🔍 Get all productsFROM THE LIST
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find().sort({ createdAt: -1 });
