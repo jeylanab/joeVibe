@@ -13,18 +13,13 @@ app.use(express.json());
 // CORS setup
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://joevibe.vercel.app' // ✅ replace with your actual deployed frontend URL if any
+  'https://joevibe.vercel.app'  // ✅ Add this
 ];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // allow non-browser tools like Postman
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error(`❌ Not allowed by CORS: ${origin}`));
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: ['http://localhost:5173', 'https://joevibe.vercel.app'],
   credentials: true
 }));
+
 
 // Routes
 app.use('/api/auth', authRoutes);
