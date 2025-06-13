@@ -20,16 +20,24 @@ const loopedLogos = [...brandLogos, ...brandLogos];
 
 const BrandShowcase = () => {
   return (
-    <section className="bg-white py-16 w-full overflow-hidden">
-      <div className="text-center px-4 mb-10">
+    <section className="bg-white py-20 w-full overflow-hidden relative">
+
+      {/* 🔥 Top Animated Glass Card */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="bg-white/30 backdrop-blur-md border border-white/40 shadow-xl rounded-2xl max-w-2xl mx-auto px-6 py-8 text-center mb-12"
+      >
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
           Trusted by Global Icons
         </h2>
-        <p className="text-gray-600 max-w-md sm:max-w-xl mx-auto text-base sm:text-lg">
+        <p className="text-gray-700 text-base sm:text-lg max-w-lg mx-auto">
           Join the wave of top global brands shaping the future of fashion, culture, and creativity with us.
         </p>
-      </div>
+      </motion.div>
 
+      {/* 🎞️ Rolling Brand Logos */}
       <motion.div
         className="flex gap-10 items-center w-max px-4"
         animate={{ x: ['0%', '-50%'] }}
@@ -49,17 +57,29 @@ const BrandShowcase = () => {
         ))}
       </motion.div>
 
-      <div className="mt-14 text-center px-4">
-        <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">
-          Ready to Join These Visionaries?
-        </h3>
-        <p className="text-gray-600 mb-5 max-w-md mx-auto">
-          Whether you're a startup or a style leader, JoeVibe elevates your presence with identity and influence.
-        </p>
-        <button className="bg-black text-white px-6 py-2.5 text-sm sm:text-base rounded-full hover:bg-gray-800 transition-all duration-300">
-          Join the Movement
-        </button>
-      </div>
+{/* Bottom CTA Card with Animated Rolling Stroke */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="relative mt-16 max-w-2xl mx-auto text-center px-6 py-8 rounded-2xl bg-white shadow-xl z-10 overflow-hidden"
+>
+  {/* Animated Border */}
+  <div className="absolute inset-0 z-0 before:content-[''] before:absolute before:inset-[-4px] before:rounded-3xl before:bg-[conic-gradient(from_0deg,_orange,green,green,_orange,_orange,_orange,_orange,_orange)] before:animate-spin-slow before:z-[-1]"></div>
+
+  {/* Inner Content */}
+  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 relative z-10">
+    Ready to Join These Visionaries?
+  </h3>
+  <p className="mb-5 max-w-md mx-auto text-sm sm:text-base text-gray-700 relative z-10">
+    Whether you're a startup or a style leader, JoeVibe elevates your presence with identity and influence.
+  </p>
+  <button className="bg-black text-white font-medium px-6 py-2.5 text-sm sm:text-base rounded-full hover:bg-gray-900 transition-all duration-300 relative z-10">
+    Join the Movement
+  </button>
+</motion.div>
+
+
     </section>
   );
 };

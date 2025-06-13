@@ -7,6 +7,9 @@ export const theme = {
         '20vw': '20vw',
         '60vw': '60vw',
     },
+     animation: {
+        'spin-slow': 'spin 8s linear infinite',
+      },
     backdropBlur: {
         xs: '2px',
         sm: '4px',

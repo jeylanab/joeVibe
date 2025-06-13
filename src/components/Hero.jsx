@@ -21,7 +21,7 @@ const Hero = () => {
     return () => clearInterval(textInterval);
   }, []);
 
-  // Rotate images automatically
+  // Rotate images
   useEffect(() => {
     const imageInterval = setInterval(() => {
       setImages((prev) => {
@@ -29,61 +29,88 @@ const Hero = () => {
         setImageKey((k) => k + 1);
         return next;
       });
-    }, 4000);
+    }, 5000);
     return () => clearInterval(imageInterval);
   }, []);
 
+  // Animation variants
+  const centerVariants = {
+    enter: {
+      opacity: 0,
+      scale: 0.95,
+      zIndex: 0,
+      y: 20,
+    },
+    center: {
+      opacity: 1,
+      scale: 1,
+      zIndex: 10,
+      y: 0,
+      transition: { duration: 1, ease: "easeInOut" },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.9,
+      zIndex: 0,
+      y: -20,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
+  };
+
   return (
-    <div className="w-full bg-[#f8f9fb] py-10">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6 px-4 md:px-8">
-        {/* Top image for small screens / Left image for large screens */}
+    <div className="w-full bg-[#f8f9fb] py-10 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-6 px-4 md:px-8 relative">
+        
+        {/* Left small image */}
         <motion.div
           key={`left-${imageKey}`}
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="w-full md:w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-lg"
+          transition={{ duration: 0.8 }}
+          className="w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-xl"
           style={{ backgroundImage: `url(${images[1]})` }}
         />
 
-        {/* Center image with content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`center-${imageKey}`}
-            initial={{ scale: 0.92, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }} 
-            className="w-full md:w-[500px] h-[350px] sm:h-[400px] md:h-[500px] bg-cover bg-center rounded-[40px] shadow-2xl flex items-end justify-center relative"
-            style={{ backgroundImage: `url(${images[0]})` }}
-          >
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-[40px]" />
+        {/* Center image */}
+        <div className="relative w-full md:w-[500px] h-[500px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`center-${imageKey}`}
+              variants={centerVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              className="absolute top-0 left-0 w-full h-full bg-cover bg-center rounded-[40px] shadow-2xl flex items-end justify-center"
+              style={{ backgroundImage: `url(${images[0]})` }}
+            >
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-[40px]" />
 
-            {/* Text content */}
-            <div className="z-10 text-center pb-10 px-4">
-              <h1 className="text-3xl animate-pulse sm:text-4xl md:text-5xl font-bold mb-3 text-green-500 ">
-                {textOptions[textIndex]} <span className="text-white block">Your Style</span>
-              </h1>
-              <p className="text-sm sm:text-base text-white mb-6">
-                Shop the latest trends and exclusive collections
-              </p>
-              <button className="bg-orange-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 shadow-md">
-                Shop Collections
-              </button>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+              {/* Text content */}
+              <div className="z-10 text-center pb-10 px-4">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-green-500 animate-pulse">
+                  {textOptions[textIndex]} <span className="text-white block">Your Style</span>
+                </h1>
+                <p className="text-sm sm:text-base text-white mb-6">
+                  Shop the latest trends and exclusive collections
+                </p>
+                <button className="bg-orange-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-600 transition duration-300 shadow-md">
+                  Shop Collections
+                </button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
-        {/* Bottom image for small screens / Right image for large screens */}
+        {/* Right small image */}
         <motion.div
           key={`right-${imageKey}`}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="w-full md:w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-lg"
+          transition={{ duration: 0.8 }}
+          className="w-[120px] h-[120px] md:h-[400px] bg-cover bg-center rounded-full shadow-xl"
           style={{ backgroundImage: `url(${images[2]})` }}
         />
       </div>
