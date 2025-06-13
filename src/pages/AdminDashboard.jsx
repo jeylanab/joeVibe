@@ -6,7 +6,7 @@ const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/products')
+    axios.get('http://joevibe.onrender.com/api/products')
       .then(res => setProducts(res.data))
       .catch(err => alert('Failed to load products'));
   }, []);
@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     if (!window.confirm('Delete this product?')) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/products/${id}`);
+      await axios.delete(`http://joevibe.onrender.com/api/products/${id}`);
       setProducts(prev => prev.filter(p => p._id !== id));
     } catch (err) {
       alert('Failed to delete');

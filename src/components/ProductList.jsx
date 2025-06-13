@@ -5,7 +5,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/products")
+    axios.get("http://joevibe.onrender.com/api/products")
       .then(res => setProducts(res.data))
       .catch(() => alert("Failed to load products"));
   }, []);

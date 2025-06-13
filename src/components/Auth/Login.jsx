@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", form);
+      const res = await axios.post("http://joevibe.onrender.com/api/auth/login", form);
       login(res.data); // store in context or localStorage
 
       // ✅ Redirect based on role
