@@ -10,20 +10,20 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+// CORS setup
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://your-vercel-app-name.vercel.app' // replace with your real Vercel domain
+  'https://joevibe.vercel.app' // ✅ replace with your actual deployed frontend URL if any
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl)
-    if (!origin) return callback(null, true);
+    if (!origin) return callback(null, true); // allow non-browser tools like Postman
     if (allowedOrigins.includes(origin)) return callback(null, true);
-    return callback(new Error('Not allowed by CORS'));
+    return callback(new Error(`❌ Not allowed by CORS: ${origin}`));
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  credentials: true
 }));
 
 // Routes
