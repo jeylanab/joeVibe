@@ -52,7 +52,7 @@ const Login = () => {
             placeholder="Enter your email"
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
           />
 
           <input
@@ -62,7 +62,7 @@ const Login = () => {
             placeholder="Enter your password"
             value={form.password}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition duration-300"
           />
         </div>
 
