@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://joevibe.onrender.com/api/auth/register', form);
+      const res = await axios.post('https://joevibe.onrender.com/api/auth/register', form);
       console.log(res.data);
       alert('Registered Successfully');
     } catch (err) {

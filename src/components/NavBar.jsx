@@ -86,9 +86,6 @@ const NavBar = () => {
             <li onClick={toggleMobileMenu}><Link to="/">Home</Link></li>
             <li onClick={toggleMobileMenu}><Link to="/">Product</Link></li>
             <li onClick={toggleMobileMenu}><Link to="/">Contact</Link></li>
-            {user && (
-              <li onClick={toggleMobileMenu}><Link to="/add-product">Add Product</Link></li>
-            )}
           </ul>
           <div className='flex flex-col text-2xl items-left mt-5'>
             <div className='search flex items-center my-3'>

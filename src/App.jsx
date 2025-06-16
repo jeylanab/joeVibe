@@ -1,17 +1,19 @@
+// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import Hero from './components/Hero';
 import People from './components/People';
-import Footer from './components/Footer';
+import BrandLogoCarousel from './components/BrandLogoCarousel';
 import ProductList from './components/ProductList';
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import AddProduct from './components/AddProduct';
-import BrandLogoCarousel from './components/BrandLogoCarousel';
-import AdminDashboard from './pages/AdminDashboard';
-import ProtectedRoute from './components/ProtectedRoute'; // ✅ Add this
-import './index.css';
+import ProtectedRoute from './components/ProtectedRoute';
+
+import AdminLayout from './admin/AdminLayout';
+import AdminDashboard from './admin/AdminDashboard';
+import AddProduct from './admin/AddProduct';
 
 const App = () => {
   return (
@@ -20,7 +22,7 @@ const App = () => {
         <NavBar />
 
         <Routes>
-          {/* Home Page */}
+          {/* Public Pages */}
           <Route
             path="/"
             element={
@@ -32,23 +34,22 @@ const App = () => {
               </>
             }
           />
-
-          {/* Public Routes */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<ProductList />} />
 
-          {/* Admin-Only Routes */}
+          {/* Admin Pages */}
           <Route
-            path="/add-product"
+            path="/admin"
             element={
               <ProtectedRoute role="admin">
-                <AddProduct />
-                <AdminDashboard />
-                
+                <AdminLayout />
               </ProtectedRoute>
             }
-          />
+          >
+            <Route path="dashboard" element={<AdminDashboard />} />
+            <Route path="add-product" element={<AddProduct />} />
+          </Route>
         </Routes>
 
         <Footer />

@@ -35,7 +35,7 @@ const AddProduct = () => {
     setMessage('');
     try {
       const res = await axios.post(
-        'http://joevibe.onrender.com/api/products/add-product',
+        'https://joevibe.onrender.com/api/products/add-product',
         product,
         {
           headers: {
