@@ -1,4 +1,3 @@
-// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -15,6 +14,15 @@ import AdminLayout from './admin/AdminLayout';
 import AdminDashboard from './admin/AdminDashboard';
 import AddProduct from './admin/AddProduct';
 
+import UserLayout from './user/UserLayout';
+import UserOrders from './user/UserOrders';
+import UserProfile from './user/UserProfile';
+import UserWishlist from './user/UserWishlist';
+import UserSupport from './user/UserSupport';
+
+// ✅ Import your new component
+import UserDashboard from './user/UserDashboard';
+
 const App = () => {
   return (
     <Router>
@@ -28,15 +36,32 @@ const App = () => {
             element={
               <>
                 <Hero />
+                <ProductList />
                 <People />
                 <BrandLogoCarousel />
-                <ProductList />
               </>
             }
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<ProductList />} />
+          <Route path="/products/:id" element={<ProductList />} />
+
+          {/* ✅ User Pages */}
+          <Route
+            path="/user"
+            element={
+              <ProtectedRoute role="user">
+                <UserLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route path="products" element={<UserDashboard />} />
+            <Route path="orders" element={<UserOrders />} />
+            <Route path="profile" element={<UserProfile />} />
+            <Route path="wishlist" element={<UserWishlist />} />
+            <Route path="support" element={<UserSupport />} />
+          </Route>
 
           {/* Admin Pages */}
           <Route

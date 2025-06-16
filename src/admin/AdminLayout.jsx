@@ -3,8 +3,6 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 
 const AdminLayout = () => {
-    console.log("✅ AdminLayout loaded");
-
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Left sidebar only on admin pages */}

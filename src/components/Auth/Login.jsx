@@ -23,7 +23,7 @@ const Login = () => {
       // ✅ Redirect based on role
       const userRole = res.data.user?.role || res.data.role;
       if (userRole === 'admin') {
-        navigate('/add-product');
+        navigate('/admin/dashboard');
       } else {
         navigate('/products');
       }
