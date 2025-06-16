@@ -44,7 +44,6 @@ const App = () => {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductList />} />
 
           {/* ✅ User Pages */}

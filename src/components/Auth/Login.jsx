@@ -25,7 +25,7 @@ const Login = () => {
       if (userRole === 'admin') {
         navigate('/admin/dashboard');
       } else {
-        navigate('/products');
+        navigate('/user/products'); // ✅ Corrected route for user
       }
     } catch (err) {
       alert("Login failed");

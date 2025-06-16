@@ -80,13 +80,13 @@ const ProductList = () => {
           transition={{ duration: 0.6 }}
           className="fixed top-6 left-1/2 transform -translate-x-1/2 bg-orange-100 border border-orange-300 shadow-lg px-6 py-3 rounded-full text-orange-800 text-sm font-medium z-50"
         >
-          👋 Welcome to <span className="font-semibold">JoeVibe</span> — Discover your perfect vibe!
+          Welcome to <span className="font-semibold">JoeVibe</span> — Discover your perfect vibe!
         </motion.div>
       )}
 
       {/* Section Title */}
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-light text-gray-900">✨ Our Best Picks</h2>
+        <h2 className="text-5xl font-medium text-gray-900">Our Best Picks</h2>
         <p className="mt-4 text-gray-500 text-lg max-w-xl mx-auto">
           Discover premium products crafted for your lifestyle.
         </p>
