@@ -27,7 +27,7 @@ const NavBar = () => {
           <li className='mx-5'><Link to="/">Product</Link></li>
           <li className='mx-5'><Link to="/">Contact</Link></li>
           {user && (
-            <li className='mx-5 text-purple-500'><Link to="/add-product">Add Product</Link></li>
+            <li className='mx-5 text-purple-500'><Link to="/admin/add-product">Admin</Link></li>
           )}
         </ul>
         <div className='flex justify-center items-center'>
